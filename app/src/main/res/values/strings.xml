@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">BusTool</string>
+    <string name="km">km</string>
+    <string name="index">首页</string>
+    <string name="route">路线</string>
+    <string name="aboard">上车地点</string>
+    <string name="mine">个人中心</string>
+    <string name="search_text">搜索公交线路、车站、地点</string>
+    <string name="my_collection">我的收藏</string>
+    <string name="index_map">地图</string>
+    <string name="notwork">施工中!!!!</string>
+    <string name="locating">正在定位，请稍后...</string>
+    <string name="bus_list">当前位置公交线路:</string>
+    <string name="nonbusline">非常抱歉，当前未搜到您周围的公交站点信息！</string>
+    <string name="locating_waiting">等待定位完成</string>
+    <string name="waiting_busline">正在获取公交线路信息</string>
+    <string name="busline_message">线路详情</string>
+    <string name="loading">加载中...</string>
+    <string name="route_calculate">路线规划</string>
+    <string name="search">搜索</string>
+    <string name="my_location">我的位置</string>
+    <string name="input_from">输入起点</string>
+    <string name="input_to">输入终点</string>
+    <string name="test">测试</string>
+    <string name="map_select">地图选点</string>
+    <string name="dot">·</string>
+    <string name="confirm">确定</string>
+    <string name="no_traffic">该线路暂无交通信息!</string>
+    <string name="cant_getaddress">无法获取该位置信息!</string>
+    <string name="not_design">本站点尚未开通公交信息查询</string>
+    <string name="same_line">同站线路</string>
+    <string name="input_name">输入目的站</string>
+    <string name="click_show">点击站点显示信息</string>
+    <string name="loading_data">正在获取信息，请稍后...</string>
+    <string name="route_detail">线路详情</string>
+</resources>

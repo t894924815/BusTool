@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/myLocationMessage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="5dp"
+    android:visibility="gone"
+    >
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:src="@drawable/poi_marker_location"
+        android:paddingRight="5dp"
+        />
+    <TextView
+        android:gravity="center"
+        android:id="@+id/myAddress"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="27"
+        android:textColor="@color/text_default"
+        android:textSize="13sp"
+        />
+</LinearLayout>

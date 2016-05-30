@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aki.bustool">
+
+    <!-- 用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!-- 开发者申请的key -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="3a185656182f2003d5c9a073887dd627" />
+
+        <!-- 定位Service -->
+        <service android:name="com.amap.api.location.APSService" />
+        <service android:name=".service.BusLineService" />
+        <service android:name=".service.BaseLocationService" />
+        <service
+            android:name=".service.LocationService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="LocationService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".service.PoiSearchService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="PoiService" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.IndexMapActivity">
+            <intent-filter>
+                <action android:name="IndexMap" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.SearchActivity"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="search" />
+            </intent-filter>
+        </activity>
+
+        <!-- <receiver android:name=".activities.IndexMapActivity$Receiver"> -->
+        <!-- <intent-filter android:priority="1000"> -->
+        <!-- <action android:name="com.locationreciever"/> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <activity android:name=".test.Main2Activity">
+            <intent-filter>
+                <action android:name="text" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.TestActivity" />
+        <activity android:name=".activities.BusLineShowActivity" />
+        <activity android:name=".activities.RouteActivity" />
+        <activity
+            android:name=".activities.RouteInputActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activities.ShowPathActivity" />
+        <activity android:name=".activities.SelectMapPointActivity" />
+        <activity android:name=".activities.SameStationActivity"/>
+        <activity android:name=".activities.BusRouteDetailActivity"/>
+    </application>
+
+</manifest>
