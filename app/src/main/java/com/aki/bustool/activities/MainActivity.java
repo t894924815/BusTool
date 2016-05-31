@@ -52,16 +52,11 @@ public class MainActivity extends AppCompatActivity
         implements View.OnClickListener/*implements View.OnTouchListener*/ {
 
 
-    @BindView(R.id.login_page)
-    LinearLayout loginPage;
-    @BindView(R.id.no_user)
-    LinearLayout noUser;
-    @BindView(R.id.submit)
-    Button submit;
-    @BindView(R.id.user_name)
-    EditText userName;
-    @BindView(R.id.password)
-    EditText password;
+    private LinearLayout loginPage;
+    private LinearLayout noUser;
+    private Button submit;
+    private EditText userName;
+    private EditText password;
     private Toolbar toolbar;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -69,6 +64,7 @@ public class MainActivity extends AppCompatActivity
     private String[] lvs = {"List Item 01", "List Item 02", "List Item 03", "List Item 04"};
     private ArrayAdapter arrayAdapter;
     private ImageView login;
+    private Button regist;
 
     private LinearLayout mIndex;
     private ImageView mIndexImage;
@@ -139,8 +135,14 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void initView() {
-        userName.addTextChangedListener(new OnGetUser(true));
-        password.addTextChangedListener(new OnGetUser(false));
+        userName = $(R.id.user_name);
+        password = $(R.id.password);
+        submit = $(R.id.submit);
+        noUser = $(R.id.no_user);
+        loginPage = $(R.id.login_page);
+        regist = $(R.id.regist);
+        submit.setOnClickListener(this);
+        regist.setOnClickListener(this);
 
         mDrawerLayout = $(R.id.drawer_layout);
         toolbar = $(R.id.tl_custom);
@@ -176,6 +178,9 @@ public class MainActivity extends AppCompatActivity
         FRAGMENT_MAIN = R.id.main_fragment;
         mFragmentManager = getFragmentManager();
 
+        userName.addTextChangedListener(new OnGetUser(true));
+        password.addTextChangedListener(new OnGetUser(false));
+        submit.setEnabled(false);
         mIndex.performClick();
     }
 
@@ -206,6 +211,10 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.submit:
                 submit();
+                break;
+            case R.id.regist:
+                regist();
+                break;
         }
     }
 
@@ -214,18 +223,18 @@ public class MainActivity extends AppCompatActivity
         int result = check.validate();
         switch(result){
             case Initialize.ERROR_USER:
-                Toast.makeText(this,"用户名不存在!",Toast.LENGTH_LONG);
+                Toast.makeText(this,"用户名不存在!",Toast.LENGTH_LONG).show();
                 break;
             case Initialize.ERROR_PASSWORD:
-                Toast.makeText(this,"密码错误!",Toast.LENGTH_LONG);
+                Toast.makeText(this,"密码错误!",Toast.LENGTH_LONG).show();
                 break;
             case Initialize.LOGIN_SUCCESS:
-                showUserPage();
+                showUserPage(userId);
                 break;
         }
     }
 
-    private void showUserPage() {
+    private void showUserPage(String username) {
 
     }
 
@@ -242,7 +251,16 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void regist() {
-        Intent intent = new Intent();
+        Intent intent = new Intent(this,RegistPageActivity.class);
+        startActivityForResult(intent,Initialize.REGIST_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(Initialize.REGIST_REQUEST == requestCode && Initialize.REGIST_RESULT == resultCode){
+            showUserPage(data.getStringExtra("UserId"));
+        }
     }
 
     public void setTabSelection(int index) {

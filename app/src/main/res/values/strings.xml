@@ -44,4 +44,8 @@
     <string name="key_user">请输入用户名</string>
     <string name="password">密码:</string>
     <string name="submit">登陆</string>
+    <string name="regist">注册</string>
+    <string name="key_password">请输入密码</string>
+    <string name="confirm_pass">确认密码</string>
+    <string name="pass_again">请重复密码</string>
 </resources>

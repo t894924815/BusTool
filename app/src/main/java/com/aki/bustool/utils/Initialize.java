@@ -38,6 +38,8 @@ public class Initialize {
     public static final int LOGIN_SUCCESS = 0;
     public static final int ERROR_USER = 1;
     public static final int ERROR_PASSWORD = 2;
+    public static final int REGIST_REQUEST = 33654;
+    public static final int REGIST_RESULT = 55469;
     private static UserOpenHelper TEST;
 
     private static String ID = "";
