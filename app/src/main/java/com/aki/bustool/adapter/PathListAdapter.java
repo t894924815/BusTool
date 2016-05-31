@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.*;
 
+import com.aki.bustool.Interfaces.OnGetAllViews;
 import com.aki.bustool.R;
 import com.aki.bustool.utils.Initialize;
 import com.amap.api.services.route.BusPath;
@@ -161,4 +162,5 @@ public class PathListAdapter extends BaseAdapter{
         public TextView price;
         public  List<String> busLineName;
     }
+
 }

@@ -27,6 +27,8 @@ import com.amap.api.services.core.LatLonPoint;
 
 public class Initialize {
 
+    public static final int BUTTON = 1;
+    public static final int CURSOR = 2;
     public static int SCREEN_WIDTH;
     public static int SCREEN_HEIGHT;
     public static int DRAW_BACK;

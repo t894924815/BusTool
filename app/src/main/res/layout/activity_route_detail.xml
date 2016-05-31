@@ -65,7 +65,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.2"
+        android:layout_weight="1"
         android:background="@color/white_text"
         android:orientation="vertical"
         >
@@ -130,40 +130,19 @@
         android:background="@color/white_text"
         android:orientation="vertical"
         >
-        <LinearLayout
+        <ImageView
+            android:id="@+id/cursor"
+            android:layout_width="100dp"
+            android:layout_height="3dp"
+            android:background="@color/blue_bg"
+            />
+         <LinearLayout
+            android:id="@+id/schema"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="11"
+            android:layout_weight="9.5"
             android:orientation="horizontal"
             >
-            <TextView
-                android:gravity="center"
-                android:id="@+id/scheme_1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                />
-            <TextView
-                android:gravity="center"
-                android:id="@+id/scheme_2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                />
-            <TextView
-                android:gravity="center"
-                android:id="@+id/scheme_3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                />
-            <TextView
-                android:gravity="center"
-                android:id="@+id/scheme_4"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                />
         </LinearLayout>
         <TextView
             android:layout_width="match_parent"
@@ -173,7 +152,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="17"
+            android:layout_weight="18.5"
             >
             <android.support.v4.view.ViewPager
                 android:id="@+id/below_pager"

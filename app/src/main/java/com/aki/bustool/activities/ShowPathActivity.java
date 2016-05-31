@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import java.util.*;
 
+import com.aki.bustool.Interfaces.OnGetAllViews;
 import com.aki.bustool.R;
 import com.aki.bustool.adapter.PathListAdapter;
 import com.aki.bustool.bean.LocationMessage;
@@ -23,7 +24,8 @@ import com.amap.api.services.route.DriveRouteResult;
 import com.amap.api.services.route.RouteSearch;
 import com.amap.api.services.route.WalkRouteResult;
 
-public class ShowPathActivity extends AppCompatActivity implements RouteSearch.OnRouteSearchListener, View.OnClickListener, AdapterView.OnItemClickListener {
+public class ShowPathActivity extends AppCompatActivity implements RouteSearch.OnRouteSearchListener,
+        View.OnClickListener, AdapterView.OnItemClickListener {
 
     private LocationMessage locationMessage;
     private RouteSearch mRouteSearch;
@@ -182,7 +184,9 @@ public class ShowPathActivity extends AppCompatActivity implements RouteSearch.O
         showPathInMap = new Intent(this,BusRouteDetailActivity.class);
         showPathInMap.putExtra("bus_path", item);
         showPathInMap.putExtra("bus_result", mBusRouteResult);
+        showPathInMap.putExtra("Position",i);
         showPathInMap.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(showPathInMap);
     }
+
 }
