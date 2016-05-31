@@ -37,4 +37,11 @@
     <string name="scheme_2">方案2</string>
     <string name="scheme_3">方案3</string>
     <string name="scheme_4">方案4</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="login">点击登录</string>
+    <string name="user_name">用户名:</string>
+    <string name="key_user">请输入用户名</string>
+    <string name="password">密码:</string>
+    <string name="submit">登陆</string>
 </resources>

@@ -1,7 +1,6 @@
 package com.aki.bustool.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,15 +10,12 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.*;
 
-import com.aki.bustool.Interfaces.OnGetAllViews;
 import com.aki.bustool.R;
 import com.aki.bustool.utils.Initialize;
 import com.amap.api.services.route.BusPath;
-import com.amap.api.services.route.BusRouteResult;
 import com.amap.api.services.route.BusStep;
 
 /**

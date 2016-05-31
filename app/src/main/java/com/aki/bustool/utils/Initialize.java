@@ -27,8 +27,21 @@ import com.amap.api.services.core.LatLonPoint;
 
 public class Initialize {
 
+    public static boolean IS_LOGGING = false;
+
+
     public static final int BUTTON = 1;
     public static final int CURSOR = 2;
+    public static final String INDEX_PAGE = "首页";
+    public static final String SECOND_PAGE = "路线";
+    public static final String THIRD_PAGE = "个人中心";
+    public static final int LOGIN_SUCCESS = 0;
+    public static final int ERROR_USER = 1;
+    public static final int ERROR_PASSWORD = 2;
+    private static UserOpenHelper TEST;
+
+    private static String ID = "";
+    private static String PASSWORD = "";
     public static int SCREEN_WIDTH;
     public static int SCREEN_HEIGHT;
     public static int DRAW_BACK;
@@ -71,6 +84,7 @@ public class Initialize {
     public static String BASE_LOCATION_RECEIVER;
 
     public static void init(Context context){
+        TEST = new UserOpenHelper(context);
         WindowManager mWindowManager = (WindowManager) context
                 .getSystemService(Context.WINDOW_SERVICE);
         Point mPoint = new Point();

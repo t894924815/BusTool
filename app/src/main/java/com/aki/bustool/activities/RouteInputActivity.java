@@ -26,7 +26,8 @@ import com.amap.api.services.poisearch.PoiSearch;
 
 import java.util.*;
 
-public class RouteInputActivity extends AppCompatActivity implements TextWatcher, View.OnClickListener, AdapterView.OnItemClickListener, PoiSearch.OnPoiSearchListener {
+public class RouteInputActivity extends AppCompatActivity implements
+        TextWatcher, View.OnClickListener, AdapterView.OnItemClickListener, PoiSearch.OnPoiSearchListener {
 
 
     private Intent resultIntent;

@@ -12,7 +12,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import java.util.*;
 
-import com.aki.bustool.Interfaces.OnGetAllViews;
 import com.aki.bustool.R;
 import com.aki.bustool.adapter.PathListAdapter;
 import com.aki.bustool.bean.LocationMessage;
