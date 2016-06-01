@@ -48,4 +48,6 @@
     <string name="key_password">请输入密码</string>
     <string name="confirm_pass">确认密码</string>
     <string name="pass_again">请重复密码</string>
+    <string name="nick_name">昵称</string>
+    <string name="key_nickname">请输入昵称</string>
 </resources>

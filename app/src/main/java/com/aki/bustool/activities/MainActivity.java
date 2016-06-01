@@ -1,20 +1,24 @@
 package com.aki.bustool.activities;
 
+import android.app.Dialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -219,7 +223,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void submit() {
-        UserDao check = new UserDao(this,userId,pass);
+        UserDao check = new UserDao(this,userId,pass,null);
         int result = check.validate();
         switch(result){
             case Initialize.ERROR_USER:
